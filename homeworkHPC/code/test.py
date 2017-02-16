@@ -12,3 +12,4 @@ else:
    print "[%02d] Received message: %d" % (comm.rank, recvmsg)
    sendmsg = "Message from 1"
    comm.send(sendmsg, dest=0, tag=22)
+ooo
