@@ -1,0 +1,24 @@
+#!/bin/sh -l
+# FILENAME: sample_jobfile_c_p11
+
+#PBS -V sample_jobfile_c_p11.sub
+#PBS -q scholar
+#PBS -l nodes=1:ppn=11
+#PBS -l walltime=1:00:00
+#PBS -N problem_c_p11
+#PBS -n
+
+PBS_O_WORKDIR='/home/ma462/'
+export PBS_O_WORKDIR
+### ---------------------------------------
+### BEGINNING OF EXECUTION
+### ---------------------------------------
+
+echo The master node of this job is `hostname`
+echo The working directory is `echo $PBS_O_WORKDIR`
+echo This job runs on the following nodes:
+echo `cat $PBS_NODEFILE`
+
+cd $PBS_O_WORKDIR
+cmd="mpirun -hostfile $PBS_NODEFILE python homework_c_p11.py"
+$cmd >& $PBS_O_WORKDIR/output_file_c_p11

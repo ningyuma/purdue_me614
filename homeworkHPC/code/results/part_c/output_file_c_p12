@@ -1,0 +1,6 @@
+p = 12
+time use is 0.103332042694
+deltaX is 0.0002
+error_truc is 1.76332232691
+int_numerical is 22025.0876607
+int_analytical is 22023.3243384
